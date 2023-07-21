@@ -23,6 +23,7 @@ public class CountryEndpoint {
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getCountryRequest")
 	@ResponsePayload
 	public GetCountryResponse getCountry(@RequestPayload GetCountryRequest request) {
+		//http://localhost:8080/ws/countries.wsdl
 		GetCountryResponse response = new GetCountryResponse();
 		response.setCountry(countryRepository.findCountry(request.getName()));
 
